@@ -1,0 +1,16 @@
+{
+  "name": "Akoto Michael",
+  "image": "src/assets/Images/myprofilepic.jpg",
+  "role": [
+    "Web developer",
+    "Web designer UI/UX",
+    "Freelancer"
+  ],
+  "bio": "I create functional, beautiful websites with great user experience. I can build anything from portfolios to e-commerce sites. Let's create something great together.",
+  "socials": {
+    "github": "https://github.com/",
+    "linkedin": "https://linkedin.com/",
+    "twitter": "https://twitter.com/",
+    "email": "mailto:example@email.com"
+  }
+}
