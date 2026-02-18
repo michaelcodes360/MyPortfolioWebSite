@@ -1,4 +1,4 @@
-{
+export default {
   "name": "Akoto Michael",
   "image": "src/assets/Images/myprofilepic.jpg",
   "role": [
@@ -13,4 +13,4 @@
     "twitter": "https://twitter.com/",
     "email": "mailto:example@email.com"
   }
-}
+};

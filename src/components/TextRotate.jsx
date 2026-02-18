@@ -1,3 +1,4 @@
+import { CodeXml } from "lucide-react";
 import React from "react";
 
 const TextRotate = () => {
@@ -7,7 +8,7 @@ const TextRotate = () => {
         <span className="ml-2">
           <span className="text-blue-700">Web developer</span>
           <span className="text-purple-700">Web designer UI/UX</span>
-            <span className="text-green-600">Freelancer</span>
+          <span className="text-green-600">Freelancer</span>
         </span>
       </span>
     </>
