@@ -15,11 +15,11 @@ const styles = {
 };
 
 
-const Hero = ({ about, name = "Akoto Michael" }) => {
+const HeroSection = ({ about, name = "Akoto Michael" }) => {
   return (
     <>
         <Navbar/>
-      <section style={{backgroundAttachment:"fixed"}} className="flex items-center justify-center h-screen mt-0">
+      <section style={{backgroundAttachment:"fixed"}} className="section:nth-of-type(1) flex items-center justify-center h-screen mt-0">
         <div  className="hero bg-base-300 min-h-screen">
           <div className="hero-content flex-col lg:flex-row">
             <div>
@@ -57,4 +57,4 @@ const Hero = ({ about, name = "Akoto Michael" }) => {
   );
 };
 
-export default Hero;
+export default HeroSection;

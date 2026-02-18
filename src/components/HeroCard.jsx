@@ -1,6 +1,4 @@
-
-
-
+import React from 'react'
 const HeroCard = ({ image, name, role, bio, socials }) => {
 
 //   const mydata = {

@@ -4,12 +4,13 @@ import { FaHtml5 } from "react-icons/fa6";
 import { SiJavascript, SiTailwindcss } from 'react-icons/si';
 import { FaReact } from "react-icons/fa";
 import { RiNextjsFill } from 'react-icons/ri';
+import Title from './Title';
 
 const Skills = () => {
   return (
     <>
     <div>
-    <h1 className='text-5xl font-bold text-center mr-12 flex'><FaCode className='mr-2' />My Skills</h1>
+      <Title title="My Skills" className='mr-12' />
     </div>
     <div className='flex flex-col gap-4'>
     <span className='text-lg flex'><FaHtml5 size={30} className='mr-2' />HTML</span><progress className="progress progress-info w-96" value="90" max="100"></progress>

@@ -48,7 +48,7 @@ background-attachment: fixed !important;
   box-shadow:
     0 -5px 20px 0px blueviolet,
     0 5px 20px 0px aqua;
-  animation: move 2s linear infinite;
+  animation: move 8s linear infinite;
 }
 
 .spinner1 {
