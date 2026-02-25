@@ -7,31 +7,42 @@
   scroll-behavior: smooth;
 }
 
-.textShadow{
+.textShadow {
   filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.2));
 }
 
-.section1{
-background-attachment: fixed !important;
+.section1 {
+  background-attachment: fixed !important;
 }
 
 @keyframes background {
-
   0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .imageShape {
   clip-path: circle(50%);
   /* height: fit-content; */
+}
+
+.rounded-element {
+  /* border-radius: 71% 29% 65% 35% / 65% 31% 69% 35%; */
+  border-radius: 47% 53% 65% 35% / 65% 41% 59% 35%;
+  /* filter: drop-shadow(0 4px 10px rgba(128, 0, 128, 0.5)); */
+  /* filter: drop-shadow(0 4px 10px rgba(98, 62, 227, 0.5)); */
+}
+.forbackground {
+  background: linear-gradient(270deg, #050920, #061259, #032765);
+  background-size: 600% 600%;
+  animation: background 16s ease infinite;
+  /* background-image: radial-gradient( circle 382px at 50% 50.2%,  rgb(28, 30, 145) 0.1%, rgba(3,1,50,1) 100.2% ); */
 }
 
 .spinner,
@@ -56,10 +67,13 @@ background-attachment: fixed !important;
 }
 
 @keyframes move {
-    to {
-      transform: rotate(360deg);
-    }
-  
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.circled {
+  clip-path: circle(50%);
 }
 
 .card {
@@ -193,3 +207,5 @@ background-attachment: fixed !important;
     margin: -140px 0 30px;
   }
 }
+@import "tailwindcss";
+@plugin "daisyui";

@@ -5,11 +5,10 @@ import { BsSnapchat, BsTelegram } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
 import { CircleArrowUp } from "lucide-react";
 
-const Footer = () => {
+const FooterSection = () => {
   return (
     <>
-
-      <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content p-14">
+      <section id="footer" className="footer sm:footer-horizontal bg-neutral text-neutral-content p-14">
         <aside>
           <div className="spinner">
             <div className="spinner1 bg-black"></div>
@@ -20,7 +19,7 @@ const Footer = () => {
             Providing reliable technology.
           </p>
         </aside>
-        <nav >
+        <nav>
           <h6 className="footer-title text-center">Socials</h6>
           <div className="grid grid-flow-col gap-4">
             <a>
@@ -47,19 +46,20 @@ const Footer = () => {
         </div>
         <div className="animate-bounce">
           <CircleArrowUp
-          style={{ cursor: "pointer" }}
-                size={60}
-                strokeWidth={0.75}
-                onClick={() => {
-                  document
-                    .querySelector("section:nth-of-type(1)")
-                    ?.scrollIntoView({ behavior: "smooth" });
-                }}
+            style={{ cursor: "pointer" }}
+            size={60}
+            strokeWidth={0.75}
+            onClick={() => {
+              document
+                .querySelector("section:nth-of-type(1)")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
           />
         </div>
-      </footer>
+      </section>
     </>
   );
 };
 
-export default Footer;
+export default FooterSection;
+ 
