@@ -6,8 +6,11 @@ import Navbar from "../components/Navbar";
 import BlurFadeText from "@/components/BlurFadeText";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { StripedPattern } from "@/components/magicui/striped-pattern";
+import AboutMeSidebar from "@/components/CustomSidebar";
+import CustomSidebar from "@/components/CustomSidebar";
 // import { LightRays } from "@/components/ui/light-rays";
 // import GradientText from "../components/GradientText";
+import data from "../mydata";
 
 const HeroSection = () => {
   const scrollBehavior = () => {
@@ -31,40 +34,49 @@ const HeroSection = () => {
               className="max-w-sm shadow-2xl rounded-element w-full h-96 object-cover mr-16"
             />
             <div>
-              {/* <div className="divider divider-horizontal divider-primary"></div> */}
-              {/* <h1 className="text-5xl font-bold textShadow">Hello there!👋</h1> */}
-              <BlurFadeText
-                greetings={"Nice to meet you"}
-                name="Akoto Michael"
-              />
-              {/* <p className="text-5xl py-3 font-bold textShadow">I'm {name}</p> */}
-              {/* <hr className="w-96 mt-3 opacity-10" /> */}
-               <div className="divider h-0.5 w-80 opacity-60"></div>
-              <BlurFade delay={0.2 * 5}>
-                <p className="text-xl mt-3">
-                  I build functional, visually appealing websites with excellent
-                  user experience, from portfolios to e-commerce platforms, and
-                  I am ready to help bring your ideas to life. Let's create
-                  something amazing together!
-                </p>
-              </BlurFade>
+              <BlurFadeText greetings={data.greetings} name={data.name} />
+              <div className="divider h-0.5 w-80 opacity-60"></div>
+              <span>
+                <BlurFade delay={0.2 * 5}>
+                  <p className="text-xl mt-3 mb-5">{data.shortBio}</p>
+                </BlurFade>
+              </span>
+              <div>
+                {/* -----this to show my about me side bar----- */}
+                <CustomSidebar
+                  buttonName={"About Me"}
+                  Dtitle={"A bit of me"}
+                  Ddescription={"Get to know me Better"}
+                >
+                  {/* <p className="style-lyra:mb-2 style-lyra:leading-relaxed mb-4 leading-normal whitespace-pre-line">
+                    {data.about}
+                  </p> */}
+                  {data.about.map((mybio) => (
+                    <p key={mybio} className="mb-4">
+                      {mybio}
+                    </p>
+                  ))}
+                </CustomSidebar>
+              </div>
             </div>
           </div>
-          <span className="animate-bounce absolute bottom-10 sm:bottom-20">
-            <CircleArrowDown
-              style={{ cursor: "pointer" }}
-              size={60}
-              strokeWidth={0.75}
-              onClick={scrollBehavior}
-            />
-          </span>
+            <span className="animate-bounce absolute bottom-10 sm:bottom-20">
+          <BlurFade delay={0.2 * 12}>
+              <CircleArrowDown
+                style={{ cursor: "pointer" }}
+                size={60}
+                strokeWidth={0.75}
+                onClick={scrollBehavior}
+              />
+          </BlurFade>
+            </span>
         </div>
         {/* <HomeCard /> */}
-            {/* <LightRays length="100vh"  /> */}
-           
-      {/* <StripedPattern className="mask-[radial-gradient(100px_circle_at_left,white,transparent)]" /> */}
-      <StripedPattern className="mask-[radial-gradient(200px_circle_at_right,white,transparent)]" />
-      {/* <StripedPattern className="mask-[radial-gradient(350px_circle_at_center,white,transparent)]" /> */}
+        {/* <LightRays length="100vh"  /> */}
+
+        {/* <StripedPattern className="mask-[radial-gradient(100px_circle_at_left,white,transparent)]" /> */}
+        <StripedPattern className="mask-[radial-gradient(200px_circle_at_right,white,transparent)]" />
+        {/* <StripedPattern className="mask-[radial-gradient(350px_circle_at_center,white,transparent)]" /> */}
       </section>
     </>
   );

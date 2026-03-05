@@ -1,5 +1,12 @@
 import { Download } from "lucide-react";
 import React from "react";
+import { FaArrowDown, FaHandsHelping } from "react-icons/fa";
+import { GiSkills, GiTeamIdea } from "react-icons/gi";
+import { GoHome } from "react-icons/go";
+import { GrProjects } from "react-icons/gr";
+import { IoIosPeople } from "react-icons/io";
+import { MdOutlineConnectWithoutContact } from "react-icons/md";
+
 
 const Navbar = () => {
 
@@ -25,18 +32,18 @@ const Navbar = () => {
       <ul
         tabIndex="-1"
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#skills">My Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#services">My Services</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#services">Testimonials</a></li>
-        <li><a href="#contacts">Contact Me</a></li>
-        <li><a href="#footer">Footerpage</a></li>
+        <li><a href="#home"><GoHome color="cyan" size={13} />Home / About me</a></li>
+        <li><a href="#skills"><GiSkills color="cyan" size={13} />My Skills</a></li>
+        <li><a href="#projects"><GrProjects color="cyan" size={13} />Projects</a></li>
+        <li><a href="#services"><FaHandsHelping color="cyan" size={13} />My Services</a></li>
+        <li><a href="#experience"><GiTeamIdea color="cyan" size={13} />Experience</a></li>
+        <li><a href="#testimonials"><IoIosPeople color="cyan" size={13} />Testimonials</a></li>
+        <li><a href="#contacts"><MdOutlineConnectWithoutContact color="cyan" size={13} />Contact Me</a></li>
+        <li><a href="#footer"><FaArrowDown color="cyan" size={13} />Footerpage</a></li>
       </ul>
     </div>
   </div>
-      <div className="align-middle flex justify-end w-full mr-4">
+      <div className="flex justify-end w-full mr-4">
         <button className="btn bgbtn-sm px-9 py-6 rounded-full bg-blue-700 hover:bg-blue-500 btnEffect" onClick={handleDownload}>
           <Download className="mr-1" size={17} />
           Downlaod CV

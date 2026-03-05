@@ -1,13 +1,10 @@
-import React from "react";
+import React  from "react";
 import { FlipCard } from "./animate-ui/components/community/flip-card";
 import { BlurFade } from "./ui/blur-fade";
-import BookMeModal from "./BookMeModal";
-import BookMeForm from "./BookMeForm";
+import ResponsiveModal from "./ResponsiveModal";
+// import BookMeForm from "./BookMeForm";
 
-const Services = () => {
-  const handleShowModal = () => {
-    setshowModal(true);
-  };
+const Services = ({}) => {
   const data = {
     data1: {
       name: "Web Development",
@@ -54,31 +51,30 @@ const Services = () => {
 
   return (
     <>
-      <div className="flex items-center justify-center gap-6">
-        <BlurFade delay={0.25 * 4}>
-          {/* <FlipCard data={data.data1} /> */}
-          <FlipCard data={data.data1}>
-            <BookMeModal>
-              <BookMeForm bookFor={"Book for Web Development"} />
-            </BookMeModal>
-          </FlipCard>
-        </BlurFade>
-        <BlurFade delay={0.25 * 5}>
-          {/* <FlipCard data={data.data2} /> */}
-          <FlipCard data={data.data2}>
-            <BookMeModal>
-              <BookMeForm bookFor={"Book for UI/UX Design"} />
-            </BookMeModal>
-          </FlipCard>
-        </BlurFade>
-        <BlurFade delay={0.25 * 6}>
-          {/* <FlipCard data={data.data3} /> */}
-          <FlipCard data={data.data3}>
-            <BookMeModal>
-              <BookMeForm />
-            </BookMeModal>
-          </FlipCard>
-        </BlurFade>
+      <div className="flex items-center justify-center gap-8">
+        <>
+          <BlurFade delay={0.25 * 4}>
+            {/* <FlipCard data={data.data1} /> */}
+            <FlipCard data={data.data1}>
+              {/* <BookMeForm bookFor={"Book for Web Development"} /> */}
+                <ResponsiveModal bookFor={"Book for Web Development"} />
+            </FlipCard>
+          </BlurFade>
+          <BlurFade delay={0.25 * 5}>
+            {/* <FlipCard data={data.data2} /> */}
+            <FlipCard data={data.data2}>
+              {/* <BookMeForm bookFor={"Book for UI/UX Design"} /> */}
+              <ResponsiveModal bookFor={"Book for UI/UX Design"} />
+            </FlipCard>
+          </BlurFade>
+          <BlurFade delay={0.25 * 6}>
+            {/* <FlipCard data={data.data3} /> */}
+            <FlipCard data={data.data3}>
+              {/* <BookMeForm /> */}
+              <ResponsiveModal bookFor={"Book for Mobile Development"} />
+            </FlipCard>
+          </BlurFade>
+        </>
       </div>
     </>
   );

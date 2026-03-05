@@ -6,7 +6,7 @@ import { BlurFade } from "@/components/ui/blur-fade";
 const ServicesSection = () => {
   return (
     <>
-      <section id="services" className="section:nth-of-type(2) h-screen grid md:grid-rows-2">
+      <section id="services" className="section:nth-of-type(2) h-screen">
         {/* <h1 className="text-5xl font-bold text-center textShadow">Services</h1> */}
         <div className="flex-row items-center justify-center">
           <BlurFade delay={0.25} inView={true}>
