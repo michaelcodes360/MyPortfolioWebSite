@@ -9,7 +9,6 @@ A modern, responsive portfolio website built with React, Vite, and Tailwind CSS.
 - **Responsive Design** - Tailwind CSS for mobile-first styling with DaisyUI
 - **Smooth Animations** - GSAP and Framer Motion for elegant animations
 - **Interactive Carousel** - Embla Carousel for project showcases
-- **Type-Safe** - Full TypeScript support with React 19
 - **Code Quality** - ESLint configuration for consistent code standards
 - **Notifications** - React Toastify for user feedback
 
