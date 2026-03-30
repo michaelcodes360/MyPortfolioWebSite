@@ -1,16 +1,100 @@
-# React + Vite
+# My Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive portfolio website built with React, Vite, and Tailwind CSS. Showcase your projects, skills, and experience with style.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Fast Development & Building** - Powered by Vite for instant HMR (Hot Module Replacement)
+- **Modern UI Components** - Built with Radix UI and shadcn components
+- **Responsive Design** - Tailwind CSS for mobile-first styling with DaisyUI
+- **Smooth Animations** - GSAP and Framer Motion for elegant animations
+- **Interactive Carousel** - Embla Carousel for project showcases
+- **Type-Safe** - Full TypeScript support with React 19
+- **Code Quality** - ESLint configuration for consistent code standards
+- **Notifications** - React Toastify for user feedback
 
-## React Compiler
+## 🚀 Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
 
-## Expanding the ESLint configuration
+### Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Clone the repository
+```bash
+git clone https://github.com/michaelcodes360/MyPortfolioWebSite.git
+cd MyPortfolioWebSite
+Install dependencies
+bash
+npm install
+Start the development server
+bash
+npm run dev
+The application will be available at http://localhost:5173
+
+📦 Available Scripts
+npm run dev - Start development server with HMR
+npm run build - Build for production
+npm run preview - Preview production build locally
+npm run lint - Run ESLint to check code quality
+🛠️ Tech Stack
+Core
+React (v19) - UI library
+Vite (v7) - Build tool and dev server
+React Router - Client-side routing
+TypeScript - Type safety
+Styling & UI
+Tailwind CSS (v4) - Utility-first CSS framework
+DaisyUI - Tailwind CSS component library
+Radix UI - Headless UI components
+shadcn - High-quality React components
+Animations & Effects
+GSAP - Professional animation library
+Framer Motion - React animation library
+Embla Carousel - Carousel component with autoplay
+Utilities & Tools
+React Icons - Icon library
+Lucide React - Modern icon set
+React Typed - Typing animation effect
+React Fast Marquee - Marquee/scrolling text component
+Date-fns - Date manipulation
+React Toastify - Notifications
+clsx & tailwind-merge - CSS utility helpers
+📁 Project Structure
+Code
+MyPortfolioWebSite/
+├── src/                    # Source code
+├── public/                 # Static assets
+├── index.html             # HTML entry point
+├── vite.config.js         # Vite configuration
+├── tailwind.config.js     # Tailwind CSS configuration
+├── postcss.config.js      # PostCSS configuration
+├── eslint.config.js       # ESLint rules
+├── components.json        # Component configuration
+└── package.json           # Project dependencies
+🎨 Customization
+Tailwind CSS
+Modify tailwind.config.js to customize colors, fonts, and other design tokens.
+
+Components
+Check components.json for component configurations and shadcn setup.
+
+ESLint
+Update eslint.config.js to adjust code quality rules for your team standards.
+
+📚 Learn More
+React Documentation
+Vite Guide
+Tailwind CSS Docs
+Radix UI
+shadcn/ui
+🤝 Contributing
+Contributions are welcome! Feel free to submit issues and pull requests.
+
+📄 License
+This project is open source and available under the MIT License.
+
+👤 Author
+Michael - GitHub
+
