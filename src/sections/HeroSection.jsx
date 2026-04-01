@@ -33,7 +33,7 @@ const HeroSection = () => {
               src={Profile}
               className="max-w-sm shadow-2xl rounded-element w-full h-96 object-cover mr-16"
             />
-            <div className="mt-16">
+            <div className="sm:mt-36 mt-16">
               <BlurFadeText greetings={data.greetings} name={data.name} />
               <div className="divider h-0.5 w-80 opacity-60"></div>
               <span>

@@ -51,8 +51,8 @@ const Services = ({}) => {
 
   return (
     <>
+      
       <div className="flex items-center justify-center gap-8">
-        <>
           <BlurFade delay={0.25 * 4}>
             {/* <FlipCard data={data.data1} /> */}
             <FlipCard data={data.data1}>
@@ -74,7 +74,7 @@ const Services = ({}) => {
               <ResponsiveModal bookFor={"Book for Mobile Development"} />
             </FlipCard>
           </BlurFade>
-        </>
+       
       </div>
     </>
   );

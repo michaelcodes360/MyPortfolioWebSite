@@ -21,9 +21,11 @@ const BlurFadeText = ({ name, greetings }) => {
           <ReactTyped
             className="ml-2 text-blue-700 sm:text-5xl"
             strings={[
-              "Web developer",
-              "Web Designer-UI/UX design",
+              "Web Developer",
               "Data Analyst",
+              "UI/UX Designer",
+              "Freelancer",
+              "Tech Enthusiast",
             ]}
             typeSpeed={50}
             backSpeed={30}
