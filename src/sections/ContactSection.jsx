@@ -43,28 +43,30 @@ const ContactSection = () => {
           </div>
           <div className="divider divider-horizontal"></div>
           {/* ......Contact here....... */}
-          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-            <legend className="fieldset-legend">Your Details</legend>
-            <form>
-              <label className="label">Name</label>
-              <input
-                type="text"
-                className="input border focus:outline-none focus:ring-1 focus:ring-indigo-500"
-                placeholder="Your full name"
-              />
+          <BlurFade delay={0.2 * 6} inView>
+            <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+              <legend className="fieldset-legend">Your Details</legend>
+              <form>
+                <label className="label">Name</label>
+                <input
+                  type="text"
+                  className="input border focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                  placeholder="Your full name"
+                />
 
-              <label className="label mt-2">Email</label>
-              <input
-                type="email"
-                className="input border focus:outline-none focus:ring-1 focus:ring-indigo-500"
-                placeholder="user@example.com"
-                required
-              />
-              <Button type="submit" className="cursor-pointer w-full mt-2">
-                Send Message
-              </Button>
-            </form>
-          </fieldset>
+                <label className="label mt-2">Email</label>
+                <input
+                  type="email"
+                  className="input border focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                  placeholder="user@example.com"
+                  required
+                />
+                <Button type="submit" className="cursor-pointer w-full mt-2">
+                  Send Message
+                </Button>
+              </form>
+            </fieldset>
+          </BlurFade>
         </div>
 
         <div></div>
