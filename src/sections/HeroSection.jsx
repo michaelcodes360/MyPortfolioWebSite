@@ -33,7 +33,7 @@ const HeroSection = () => {
               src={Profile}
               className="max-w-sm shadow-2xl rounded-element w-full h-96 object-cover mr-16"
             />
-            <div>
+            <div className="mt-16">
               <BlurFadeText greetings={data.greetings} name={data.name} />
               <div className="divider h-0.5 w-80 opacity-60"></div>
               <span>
@@ -58,18 +58,28 @@ const HeroSection = () => {
                   ))}
                 </CustomSidebar>
               </div>
-            </div>
-          </div>
-            <span className="animate-bounce absolute bottom-10 sm:bottom-20">
+              <div className="animate-bounce mt-10 flex items-center justify-center">
           <BlurFade delay={0.2 * 12}>
               <CircleArrowDown
                 style={{ cursor: "pointer" }}
-                size={60}
+                size={56}
                 strokeWidth={0.75}
                 onClick={scrollBehavior}
               />
           </BlurFade>
-            </span>
+            </div>
+            </div>
+          </div>
+            {/* <span className="animate-bounce absolute bottom-10 sm:bottom-20">
+          <BlurFade delay={0.2 * 12}>
+              <CircleArrowDown
+                style={{ cursor: "pointer" }}
+                size={50}
+                strokeWidth={0.75}
+                onClick={scrollBehavior}
+              />
+          </BlurFade>
+            </span> */}
         </div>
         {/* <HomeCard /> */}
         {/* <LightRays length="100vh"  /> */}

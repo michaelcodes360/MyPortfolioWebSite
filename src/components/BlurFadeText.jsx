@@ -14,12 +14,12 @@ const BlurFadeText = ({ name, greetings }) => {
         <span className="text-xl tracking-tighter text-pretty sm:text-3xl xl:text-4xl/none">
           {greetings}
         </span>
-        <p className="text-5xl py-3 font-bold textShadow">I'm {name}</p>
-        <p className=" text-5xl">
+        <p className="text-4xl py-3 font-bold textShadow sm:text-5xl">I'm {name}</p>
+        <p className=" text-5xl sm:text-5xl">
           a{""}
           {/* <TextRotate /> */}
           <ReactTyped
-            className="ml-2 text-blue-700"
+            className="ml-2 text-blue-700 sm:text-5xl"
             strings={[
               "Web developer",
               "Web Designer-UI/UX design",
