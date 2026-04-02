@@ -34,7 +34,7 @@ const CustomSidebar = ({ buttonName, Dtitle, Ddescription, children }) => {
               <DrawerTitle className="text-3xl">
                 {/* <Title title={"A bit of me"} style={{fontSize:"2px"}} /> */}
                 {Dtitle}
-                <div className="w-32 h-1 bg-indigo-500 mb-6 heroText rounded-lg"></div>
+                <div className="w-24 h-1 bg-indigo-500 mb-6 heroText rounded-lg"></div>
               </DrawerTitle>
             </div>
             <DrawerDescription className="text-gray-400">

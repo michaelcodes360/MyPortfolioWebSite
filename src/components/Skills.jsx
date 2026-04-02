@@ -1,11 +1,12 @@
 import React from "react";
 import { FaBootstrap, FaCode, FaCss3 } from "react-icons/fa";
 import { FaHtml5 } from "react-icons/fa6";
-import { SiJavascript, SiTailwindcss } from "react-icons/si";
+import { SiDotnet, SiJavascript, SiTailwindcss } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
 import { RiNextjsFill } from "react-icons/ri";
 import Title from "./Title";
 import { BlurFade } from "./ui/blur-fade";
+
 
 const Skills = () => {
   return (
@@ -13,7 +14,7 @@ const Skills = () => {
       <BlurFade delay={0.25} >
         <div className="flex gap-3">
           {/* <FaCode size={44} /> */}
-          <Title title="My Skills" className="mr-12" />
+          <Title title="My skill  set" className="mr-12" />
         </div>
       </BlurFade>
       <BlurFade delay={0.25 * 5} >
@@ -77,6 +78,11 @@ const Skills = () => {
             Nextjs
           </span>
           <progress className="progress  w-96" value="50" max="100"></progress>
+          <span className="text-lg flex">
+            <SiDotnet size={30} className="mr-2" />
+            C#
+          </span>
+          <progress className="progress progress-success  w-96" value="50" max="100"></progress>
         </div>
       </BlurFade>
     </>
