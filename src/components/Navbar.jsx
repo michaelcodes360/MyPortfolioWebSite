@@ -21,7 +21,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className="navbar bg-base-300 bg-opacity-90 sticky top-0 z-10"
+      className="navbar bg-base-300 bg-opacity-90 sticky top-0 z-50 bg-card/80 backdrop-blur-xl"
       style={{ marginBottom: "-50px" }}
     >
         <div className="navbar-start">
