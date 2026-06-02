@@ -5,7 +5,7 @@ const Experiences = () => {
   return (
     <>
 <BlurFade delay={0.2 * 6} inView={true}>
-      <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+      <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical mx-auto w-full px-2 sm:px-4">
           <li>
             <div className="timeline-middle">
               <svg
@@ -22,7 +22,7 @@ const Experiences = () => {
               </svg>
             </div>
       
-            <div className="timeline-start mb-10">
+            <div className="timeline-start mb-10 text-sm sm:text-base">
               <time className="font-mono italic font-extrabold">2023</time>
               <div className="text-lg font-black text-cyan-400 ease-linear">
                 Pesol Systems limited
@@ -50,7 +50,7 @@ const Experiences = () => {
             </svg>
           </div>
         
-          <div className="timeline-end md:mb-10">
+          <div className="timeline-end text-sm sm:text-base md:mb-10">
             <time className="font-mono italic font-extrabold">2024-2025</time>
             <div className="text-lg font-black">
               <p className="text-cyan-400">Persol Sytems Limited</p>
@@ -79,7 +79,7 @@ const Experiences = () => {
               />
             </svg>
           </div>
-          <div className="timeline-start mb-10 md:text-end">
+          <div className="timeline-start mb-10 text-sm sm:text-base md:text-end">
             <time className="font-mono italic font-extrabold">2025-2026</time>
             <div className="text-lg font-black">
               <p className="text-cyan-400">Persol Systems Limited</p>

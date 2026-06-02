@@ -24,7 +24,7 @@ const Navbar = () => {
       className="navbar bg-base-300 bg-opacity-90 sticky top-0 z-50 bg-card/80 backdrop-blur-xl"
       style={{ marginBottom: "-50px" }}
     >
-        <div className="navbar-start">
+        <div className="navbar-start w-auto flex-none">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /> </svg>
@@ -43,10 +43,10 @@ const Navbar = () => {
       </ul>
     </div>
   </div>
-      <div className="flex justify-end w-full mr-4">
-        <button className="btn bgbtn-sm px-9 py-6 rounded-full bg-blue-700 hover:bg-blue-500 btnEffect" onClick={handleDownload}>
-          <Download className="mr-1" size={17} />
-          Downlaod CV
+      <div className="navbar-end flex-1 mr-0 sm:mr-4">
+        <button className="btn btn-sm max-w-[calc(100vw-4.75rem)] rounded-full bg-blue-700 px-3 hover:bg-blue-500 btnEffect sm:btn-md sm:px-9" onClick={handleDownload}>
+          <Download className="shrink-0 sm:mr-1" size={17} />
+          <span className="truncate">Downlaod CV</span>
         </button>
       </div>
     </nav>

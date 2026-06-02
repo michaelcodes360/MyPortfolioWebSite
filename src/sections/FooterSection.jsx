@@ -8,8 +8,8 @@ import { CircleArrowUp } from "lucide-react";
 const FooterSection = () => {
   return (
     <>
-      <section id="footer" className="footer sm:footer-horizontal bg-neutral text-neutral-content p-14">
-        <aside>
+      <section id="footer" className="footer bg-neutral text-neutral-content p-8 text-center sm:footer-horizontal sm:p-14 sm:text-left">
+        <aside className="items-center sm:items-start">
           <div className="spinner">
             <div className="spinner1 bg-black"></div>
           </div>
@@ -19,7 +19,7 @@ const FooterSection = () => {
             Providing reliable technology.
           </p>
         </aside>
-        <nav>
+        <nav className="mx-auto sm:mx-0">
           <h6 className="footer-title text-center">Socials</h6>
           <div className="grid grid-flow-col gap-4">
             <a>
@@ -39,12 +39,12 @@ const FooterSection = () => {
             </a>
           </div>
         </nav>
-        <div>
+        <div className="max-w-sm">
           <span className="footer-title">Copyright</span>
           <a className="link link-hover">AMJ Solutions © 2024</a>
           Practicing the art of web development, one line of code at a time.
         </div>
-        <div className="animate-bounce">
+        <div className="animate-bounce mx-auto sm:mx-0">
           <CircleArrowUp
             style={{ cursor: "pointer" }}
             size={60}

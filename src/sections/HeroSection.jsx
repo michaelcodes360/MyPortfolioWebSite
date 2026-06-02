@@ -25,20 +25,22 @@ const HeroSection = () => {
       <section
         id="home"
         style={{ backgroundAttachment: "fixed" }}
-        className="section:nth-of-type(1) flex items-center justify-center h-screen mt-0"
+        className="section:nth-of-type(1) relative flex min-h-screen items-center justify-center overflow-hidden mt-0"
       >
-        <div className="hero bg-base-300 min-h-screen">
-          <div className="hero-content flex-col lg:flex-row">
+        <div className="hero bg-base-300 min-h-screen px-4 py-24 sm:px-6 md:px-10 lg:px-0 lg:py-0">
+          <div className="hero-content w-full max-w-6xl flex-col gap-8 p-0 lg:flex-row lg:p-4">
             <img
               src={Profile}
-              className="max-w-sm shadow-2xl rounded-element w-full h-96 object-cover mr-16"
+              className="h-56 w-56 object-cover shadow-2xl rounded-element sm:h-72 sm:w-72 md:h-96 md:w-80 lg:h-96 lg:w-full lg:max-w-sm lg:mr-16"
             />
-            <div className="sm:mt-36 mt-16">
+            <div className="mt-4 w-full max-w-[calc(100vw-2rem)] text-center lg:mt-36 lg:max-w-2xl lg:text-left">
               <BlurFadeText greetings={data.greetings} name={data.name} />
-              <div className="divider h-0.5 w-80 opacity-60"></div>
+              <div className="divider mx-auto h-0.5 w-48 opacity-60 sm:w-64 md:w-80 lg:mx-0"></div>
               <span>
                 <BlurFade delay={0.2 * 5}>
-                  <p className="text-xl mt-3 mb-5">{data.shortBio}</p>
+                  <p className="mt-3 mb-5 break-words text-base leading-relaxed sm:text-lg md:text-xl">
+                    {data.shortBio}
+                  </p>
                 </BlurFade>
               </span>
               <div>
@@ -58,7 +60,7 @@ const HeroSection = () => {
                   ))}
                 </CustomSidebar>
               </div>
-              <div className="animate-bounce mt-10 flex items-center justify-center">
+              <div className="animate-bounce mt-8 flex items-center justify-center lg:mt-10">
           <BlurFade delay={0.2 * 12}>
               <CircleArrowDown
                 style={{ cursor: "pointer" }}

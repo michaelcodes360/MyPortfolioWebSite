@@ -5,7 +5,7 @@ const ProjectsSection = () => {
     <>
       <section
         id="projects"
-        className="section:nth-of-type(2) flex items-center justify-center h-screen bg-base-300"
+        className="section:nth-of-type(2) flex max-h-screen items-center justify-center bg-base-300 px-4 py-28 sm:px-6 lg:h-screen lg:py-0"
       >
         <Projects />
       </section>

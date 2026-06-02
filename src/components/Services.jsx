@@ -52,7 +52,7 @@ const Services = ({}) => {
   return (
     <>
       
-      <div className="flex items-center justify-center gap-8">
+      <div className="grid w-full max-w-sm grid-cols-1 items-center justify-center gap-6 sm:max-w-2xl sm:grid-cols-2 lg:flex lg:max-w-none lg:gap-8">
           <BlurFade delay={0.25 * 4}>
             {/* <FlipCard data={data.data1} /> */}
             <FlipCard data={data.data1}>
@@ -67,7 +67,7 @@ const Services = ({}) => {
               <ResponsiveModal bookFor={"Book for UI/UX Design"} />
             </FlipCard>
           </BlurFade>
-          <BlurFade delay={0.25 * 6}>
+          <BlurFade delay={0.25 * 6} className="sm:col-span-2 sm:justify-self-center lg:col-span-1">
             {/* <FlipCard data={data.data3} /> */}
             <FlipCard data={data.data3}>
               {/* <BookMeForm /> */}

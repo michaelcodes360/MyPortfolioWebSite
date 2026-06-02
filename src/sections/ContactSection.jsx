@@ -1,16 +1,44 @@
 import React from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { toast } from "react-toastify";
 import CardEffect from "../components/CardEffect";
 import Title from "@/components/Title";
 import { Button } from "@/components/animate-ui/components/buttons/button";
 import { TextAnimate } from "@/components/ui/text-animate";
 import { BlurFade } from "@/components/ui/blur-fade";
 
+const contactSchema = z.object({
+  name: z.string().min(2, "Name is required must be at least 2 characters"),
+  email: z.string().email("Invalid email address"),
+});
+
 const ContactSection = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm({
+    resolver: zodResolver(contactSchema),
+  });
+
+  const onSubmit = async (data) => {
+    try {
+      console.log("Contact Form Submitted:", data);
+      await new Promise((resolve) => setTimeout(resolve, 500));
+      toast.success("Message sent successfully!");
+      reset();
+    } catch (error) {
+      toast.error("Failed to send message. Please try again.");
+    }
+  };
   return (
     <>
       <section
         id="contacts"
-        className="section:nth-of-type(5) flex items-center justify-center h-screen bg-base-400"
+        className="section:nth-of-type(5) flex min-h-screen items-center justify-center bg-base-400 px-4 py-20 sm:px-6 lg:h-screen lg:py-0"
       >
         {/* <Title title="Contact me" className="text-center mt-24 textShadow" /> */}
         {/* <CardEffect
@@ -19,9 +47,9 @@ const ContactSection = () => {
           name={"AKOTO MICHAEL APPIANTI"}
           type={"CARD HOLDER"}
         /> */}
-        <div className="flex flex-row items-center justify-center gap-8 ">
+        <div className="flex w-full max-w-4xl flex-col items-center justify-center gap-8 lg:flex-row">
           {/* ........intro / status......... */}
-          <div className="text-center mb-12 mt-32">
+          <div className="text-center lg:mb-12 lg:mt-32">
             <BlurFade delay={0.25} inView>
               <h2 className="text-4xl font-bold mb-4">Let’s Work Together</h2>
             </BlurFade>
@@ -41,28 +69,43 @@ const ContactSection = () => {
               </div>
             </BlurFade>
           </div>
-          <div className="divider divider-horizontal"></div>
+          <div className="divider my-0 w-full lg:divider-horizontal lg:w-auto"></div>
           {/* ......Contact here....... */}
           <BlurFade delay={0.2 * 6} inView>
-            <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+            <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-full max-w-xs border p-4">
               <legend className="fieldset-legend">Your Details</legend>
-              <form>
+              <form onSubmit={handleSubmit(onSubmit)}>
                 <label className="label">Name</label>
                 <input
                   type="text"
-                  className="input border focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                  className={`input border focus:outline-none focus:ring-1 focus:ring-indigo-500 ${
+                    errors.name ? "border-red-500" : ""
+                  }`}
                   placeholder="Your full name"
+                  {...register("name")}
                 />
+                {errors.name && (
+                  <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
+                )}
 
                 <label className="label mt-2">Email</label>
                 <input
                   type="email"
-                  className="input border focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                  className={`input border focus:outline-none focus:ring-1 focus:ring-indigo-500 ${
+                    errors.email ? "border-red-500" : ""
+                  }`}
                   placeholder="user@example.com"
-                  required
+                  {...register("email")}
                 />
-                <Button type="submit" className="cursor-pointer w-full mt-2">
-                  Send Message
+                {errors.email && (
+                  <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+                )}
+                <Button
+                  type="submit"
+                  className="cursor-pointer w-full mt-2"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
               </form>
             </fieldset>

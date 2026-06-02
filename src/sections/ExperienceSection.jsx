@@ -7,9 +7,9 @@ const ExperienceSection = () => {
     <>
       <section
         id="experience"
-        className="section:nth-of-type(2) flex items-center justify-center h-screen bg-base-200"
+        className="section:nth-of-type(2) flex min-h-screen items-center justify-center bg-base-200 px-4 py-20 sm:px-6 lg:h-screen lg:py-0"
       >
-        <div>
+        <div className="w-full max-w-4xl">
           <Title title="Experiences" className="text-center" />
           <Experiences />
         </div>

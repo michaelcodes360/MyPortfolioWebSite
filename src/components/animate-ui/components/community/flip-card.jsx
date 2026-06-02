@@ -63,7 +63,7 @@ const handleShowForm = () => {
   return (
     <>
       <div
-        className="mt-2 relative w-40 h-60 md:w-60 md:h-80 perspective-1000 cursor-pointer mx-auto"
+        className="mt-2 relative h-72 w-64 max-w-[calc(100vw-2rem)] sm:h-80 sm:w-60 perspective-1000 cursor-pointer mx-auto"
         onClick={handleClick}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -78,7 +78,7 @@ const handleShowForm = () => {
           <img
             src={data.image}
             alt={data.name}
-            className="size-32 md:size-24 rounded-full object-cover mb-4 border-0"
+            className="size-28 sm:size-24 rounded-full object-cover mb-4 border-0"
           />
           <h2 className="text-lg font-bold text-foreground">{data.name}</h2>
           <p className="text-sm text-muted-foreground">@{data.username}</p>

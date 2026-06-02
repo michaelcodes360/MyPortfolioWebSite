@@ -1,29 +1,39 @@
-import React, { useState } from "react";
+import React from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 import { toast } from "react-toastify";
 
+const bookingSchema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters"),
+  email: z.string().email("Invalid email address"),
+  service: z.string().min(1, "Please select a service"),
+  date: z.string().min(1, "Date is required"),
+  budget: z.string().min(1, "Budget is required").or(z.number().positive("Budget must be positive")),
+  message: z.string().min(10, "Message must be at least 10 characters"),
+});
+
 const BookMeForm = ({ bookFor }) => {
-  
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    service: "",
-    date: "",
-    budget: "",
-    message: "",
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm({
+    resolver: zodResolver(bookingSchema),
   });
 
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Booking Submitted:", formData);
-    toast.success("Booking request sent successfully!");
+  const onSubmit = async (formData) => {
+    try {
+      console.log("Booking Submitted:", formData);
+      // Simulate API call
+      await new Promise((resolve) => setTimeout(resolve, 500));
+      toast.success("Booking request sent successfully!");
+      reset();
+      throw new Error("Simulated submission error"); // Simulate an error for testing
+    } catch (error) {
+      toast.error("Failed to send booking request. Please try again.");
+    }
   };
 
   return (
@@ -41,74 +51,105 @@ const BookMeForm = ({ bookFor }) => {
         {/* Form Card */}
         <div className="card bg-base-100 shadow-2xl">
           <div className="card-body">
-            <form onSubmit={handleSubmit} className="grid gap-6">
+            <form onSubmit={handleSubmit(onSubmit)} className="grid gap-6">
               {/* Name */}
-              <input
-                type="text"
-                name="name"
-                placeholder="Full Name"
-                className="input input-bordered w-full"
-                value={formData.name}
-                onChange={handleChange}
-                required
-              />
+              <div>
+                <input
+                  type="text"
+                  placeholder="Full Name"
+                  className={`input input-bordered w-full ${
+                    errors.name ? "input-error" : ""
+                  }`}
+                  {...register("name")}
+                />
+                {errors.name && (
+                  <p className="text-error text-sm mt-1">{errors.name.message}</p>
+                )}
+              </div>
 
               {/* Email */}
-              <input
-                type="email"
-                name="email"
-                placeholder="Email Address"
-                className="input input-bordered w-full"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
+              <div>
+                <input
+                  type="email"
+                  placeholder="Email Address"
+                  className={`input input-bordered w-full ${
+                    errors.email ? "input-error" : ""
+                  }`}
+                  {...register("email")}
+                />
+                {errors.email && (
+                  <p className="text-error text-sm mt-1">{errors.email.message}</p>
+                )}
+              </div>
 
               {/* Service */}
-              <select
-                name="service"
-                className="select select-bordered w-full"
-                value={formData.service}
-                onChange={handleChange}
-                required
-              >
-                <option value="">--Select Service--</option>
-                <option value={"Web Development"}>Web Development</option>
-                <option value={"UI/UX Dsign"}>UI/UX Design</option>
-                <option value={"Mobile developmment"}>Mobile Development</option>
-              </select>
+              <div>
+                <select
+                  className={`select select-bordered w-full ${
+                    errors.service ? "select-error" : ""
+                  }`}
+                  {...register("service")}
+                >
+                  <option value="">--Select Service--</option>
+                  <option value="Web Development">Web Development</option>
+                  <option value="UI/UX Design">UI/UX Design</option>
+                  <option value="Mobile Development">Mobile Development</option>
+                </select>
+                {errors.service && (
+                  <p className="text-error text-sm mt-1">{errors.service.message}</p>
+                )}
+              </div>
 
               {/* Date */}
-              <input
-                type="date"
-                name="date"
-                className="input input-bordered w-full"
-                value={formData.date}
-                onChange={handleChange}
-              />
+              <div>
+                <input
+                  type="date"
+                  className={`input input-bordered w-full ${
+                    errors.date ? "input-error" : ""
+                  }`}
+                  {...register("date")}
+                />
+                {errors.date && (
+                  <p className="text-error text-sm mt-1">{errors.date.message}</p>
+                )}
+              </div>
 
               {/* Budget */}
-              <input
-                type="number"
-                name="budget"
-                placeholder="Estimated Budget ($)"
-                className="input input-bordered w-full"
-                value={formData.budget}
-                onChange={handleChange}
-              />
+              <div>
+                <input
+                  type="number"
+                  placeholder="Estimated Budget ($)"
+                  className={`input input-bordered w-full ${
+                    errors.budget ? "input-error" : ""
+                  }`}
+                  {...register("budget")}
+                />
+                {errors.budget && (
+                  <p className="text-error text-sm mt-1">{errors.budget.message}</p>
+                )}
+              </div>
 
               {/* Message */}
-              <textarea
-                name="message"
-                placeholder="Tell me about your project..."
-                className="textarea textarea-bordered w-full h-32"
-                value={formData.message}
-                onChange={handleChange}
-              ></textarea>
+              <div>
+                <textarea
+                  placeholder="Tell me about your project..."
+                  className={`textarea textarea-bordered w-full h-32 ${
+                    errors.message ? "textarea-error" : ""
+                  }`}
+                  {...register("message")}
+                ></textarea>
+                {errors.message && (
+                  <p className="text-error text-sm mt-1">{errors.message.message}</p>
+                )}
+              </div>
 
               {/* Submit Button */}
-              <button type="submit" className="btn btn-primary w-full">
-                Submit Booking
+              <button
+                type="submit"
+                className="btn btn-primary w-full"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Submitting..." : "Submit Booking"}
               </button>
             </form>
           </div>

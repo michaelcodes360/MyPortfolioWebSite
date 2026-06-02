@@ -108,14 +108,14 @@ const Testimonials = () => {
       {/* <div className="absolute inset-0 -z-10 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 opacity-20 blur-3xl" /> */}
 
       {/* Title */}
-      <div className="text-center mb-16">
+      <div className="text-center mb-8 sm:mb-12 lg:mb-16">
         <BlurFade delay={0.2} inView>
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
+          <h2 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl">
             What Clients Say
           </h2>
         </BlurFade>
         <BlurFade delay={0.4} inView>
-          <p className="text-white/70 mt-4">
+          <p className="text-white/70 mt-3 sm:mt-4">
             Real feedback from people I’ve worked with
           </p>
         </BlurFade>
@@ -124,7 +124,7 @@ const Testimonials = () => {
       <Carousel
         plugins={[plugin.current]}
         opts={{ align: "start", loop: true }}
-        className="w-full max-w-6xl"
+        className="mx-auto w-full max-w-6xl"
       >
         <CarouselContent>
           {content.map((item) => (
@@ -132,9 +132,9 @@ const Testimonials = () => {
               key={item.id}
               className="basis-full sm:basis-1/2 lg:basis-1/3"
             >
-              <div className="p-4">
+              <div className="p-2 sm:p-4">
                 <Card className="h-full rounded-3xl border border-white/20 bg-zinc-950 backdrop-blur-xl shadow-2xl hover:scale-[1.03] transition-all duration-500">
-                  <CardContent className="flex flex-col items-center text-center p-8 space-y-6">
+                  <CardContent className="flex flex-col items-center text-center p-5 space-y-5 sm:p-8 sm:space-y-6">
                     
                     {/* Avatar */}
                     <img
@@ -177,8 +177,8 @@ const Testimonials = () => {
           ))}
         </CarouselContent>
 
-        <CarouselPrevious className="bg-white/20 backdrop-blur-lg border border-white/20 text-white hover:bg-white/30 h" />
-        <CarouselNext className="bg-white/20 backdrop-blur-lg border border-white/20 text-white hover:bg-white/30" />
+        <CarouselPrevious className="hidden bg-white/20 backdrop-blur-lg border border-white/20 text-white hover:bg-white/30 sm:flex sm:-left-5 lg:-left-12" />
+        <CarouselNext className="hidden bg-white/20 backdrop-blur-lg border border-white/20 text-white hover:bg-white/30 sm:flex sm:-right-5 lg:-right-12" />
       </Carousel>
     {/* </section> */}
     </>
